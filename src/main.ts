@@ -7,16 +7,25 @@ import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helpe
 import App from './App.vue'
 import router from './router'
 
-let app: any = null
+interface QiankunProps {
+  container?: HTMLElement;
+  [key: string]: unknown;
+}
 
-function render(props: any = {}) {
+let app: ReturnType<typeof createApp> | null = null
+
+function render(props: QiankunProps = {}) {
   const { container } = props
   app = createApp(App)
 
   app.use(createPinia())
   app.use(router)
 
-  app.mount(container ? container.querySelector('#app') : '#app')
+  const mountElement = container ? container.querySelector('#app') : document.getElementById('app')
+  if (!mountElement) {
+    throw new Error('Mount element #app not found')
+  }
+  app.mount(mountElement)
 }
 
 renderWithQiankun({

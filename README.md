@@ -2,6 +2,39 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## Git提交规范配置
+
+本项目使用统一的Git提交信息模板，请按照以下步骤配置：
+
+```bash
+npm run setup-git-template
+```
+
+配置成功后，每次执行 `git commit` 时都会自动加载提交模板。
+
+### 提交信息格式
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+类型说明：
+- feat: 新功能
+- fix: 修复bug
+- docs: 文档修改
+- style: 代码格式修改
+- refactor: 代码重构
+- perf: 性能优化
+- test: 测试用例修改
+- chore: 其他修改
+- revert: 回滚
+- build: 打包
+- ci: CI配置相关
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
