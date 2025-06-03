@@ -7,7 +7,6 @@ import qiankun from 'vite-plugin-qiankun'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vue-qiankun-sub-app2/',
   plugins: [
     vue(),
     vueJsx(),
